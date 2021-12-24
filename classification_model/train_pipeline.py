@@ -1,5 +1,5 @@
 from config.core import config
-from pipeline import score_pipe
+from pipeline import logreg_pipe
 from processing.data_manager import load_dataset, save_pipeline
 from sklearn.model_selection import train_test_split
 
@@ -14,9 +14,9 @@ def run_training() -> None:
         random_state=config.model_config.random_state,
     )
 
-    score_pipe.fit(X_train, y_train)
+    logreg_pipe.fit(X_train, y_train)
 
-    save_pipeline(pipeline_to_persist=score_pipe)
+    save_pipeline(pipeline_to_persist=logreg_pipe)
 
 
 if __name__ == "__main__":

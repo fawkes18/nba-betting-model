@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 
 from classification_model.config.core import config
 
-score_pipe = Pipeline(
+logreg_pipe = Pipeline(
     [
         ("scaler", StandardScaler()),
         (
